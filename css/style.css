@@ -1,0 +1,137 @@
+:root {
+    /* primary text */
+    --primary-dark-blue: hsl(238, 29%, 16%);
+    --primary-soft-orange: hsl(14, 88%, 65%);
+    /* background */
+    --bg-violet: hsl(273, 75%, 66%);
+    --bg-blue: hsl(240, 73%, 65%);
+    /* text */
+    --very-dark-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+    /* dividers */
+    --dividers: hsl(240, 5%, 91%);
+  }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Kumbh Sans', sans-serif;
+    background-color: var(--bg-violet);
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 750px;
+    min-height: 475px;
+    margin: 20vh auto;
+    border-radius: 30px;
+    background-color: #fff;
+}
+
+
+.accordion {
+    min-height: 460px;
+    padding: 50px 0;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+.accordion-container {
+    max-width: 400px;
+    margin: 25px auto 0 auto;
+}
+
+.accordion__header {
+    display: flex;
+    align-items: center;
+    color: var(--very-dark-blue);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.accordion__header:hover {
+    color: var(--primary-soft-orange);
+}
+
+.arrow {
+    margin-left: auto;
+    width: 10px;
+    height: 7px;
+    background: url("../images/icon-arrow-down.svg") no-repeat top right;
+    transition: all 0.6s ease;
+}
+
+
+.accordion__header.active {
+    color: var(--primary-dark-blue);
+    font-weight: bold;
+}
+
+
+.accordion__header.active > .arrow {
+    transform: rotate(180deg);
+}
+
+.accordion__body {
+    max-height: 0;
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--dark-grayish-blue);
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+
+.divider {
+    margin: 15px 0;
+    border: 1px solid var(--dividers);
+}
+
+
+@media(max-width: 768px){
+    .container {
+        max-width: 450px;
+    }
+}
+
+@media(max-width: 500px){
+    .container {
+        max-width: 320px;
+    }
+    .accordion-container {
+        max-width: 320px;
+    }
+    .accordion {
+        padding: 30px 10px;
+    }
+    .title {
+        text-align: center;
+    }
+}
+
+@media(max-width: 350px){
+    .container {
+        margin: 15px;
+    }
+}
+
+
+@media(max-width: 325px){
+    .container {
+        margin: 15px;
+    }
+}
+
+
